@@ -1,0 +1,22 @@
+[
+  {
+    "filename": "IMG_001.jpg",
+    "size_kb": 3200.5,
+    "date_taken": "2026-05-01T18:30:00",
+    "tags": [
+      "beach",
+      "sunset"
+    ],
+    "resolution_mp": 24.0
+  },
+  {
+    "filename": "IMG_002.png",
+    "size_kb": 1800.0,
+    "date_taken": "2026-05-03T09:15:00",
+    "tags": [
+      "beach",
+      "portrait"
+    ],
+    "resolution_mp": 12.0
+  }
+]

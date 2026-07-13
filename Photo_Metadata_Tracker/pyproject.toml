@@ -1,0 +1,30 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "photo-metadata-tracker"
+version = "0.1.0"
+description = "Day 56 capstone - Photo Metadata Tracker"
+requires-python = ">=3.11"
+dependencies = [
+    "pydantic>=2.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "mypy>=1.0",
+]
+
+[tool.hatch.build.targets.wheel]
+packages = ["core", "app"]
+
+[tool.mypy]
+python_version = "3.12"
+warn_return_any = true
+explicit_package_bases = true
+mypy_path = "."
+
+[[tool.mypy.overrides]]
+module = "pydantic.*"
+ignore_missing_imports = true
