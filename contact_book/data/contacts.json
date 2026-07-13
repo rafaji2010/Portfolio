@@ -1,0 +1,33 @@
+[
+  {
+    "name": "John Doe",
+    "email": "john@example.com",
+    "phone": "555-1000",
+    "tags": [
+      "work",
+      "friend"
+    ],
+    "created_at": "2026-07-03T08:09:00.026300",
+    "notes": "Met at PyCon"
+  },
+  {
+    "name": "Jane Smith",
+    "email": "jane@example.com",
+    "phone": "555-2000",
+    "tags": [
+      "family"
+    ],
+    "created_at": "2026-07-03T08:09:00.026300",
+    "notes": "Sister"
+  },
+  {
+    "name": "Bob Wilson",
+    "email": "bob@example.com",
+    "phone": "555-3000",
+    "tags": [
+      "work"
+    ],
+    "created_at": "2026-07-03T08:09:00.026300",
+    "notes": "Project lead"
+  }
+]

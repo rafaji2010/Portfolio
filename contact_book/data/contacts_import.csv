@@ -1,0 +1,4 @@
+name,email,phone,tags,created_at,notes
+John Doe,john@example.com,555-1000,work|friend,2026-07-03T10:00:00,Met at PyCon
+Jane Smith,jane@example.com,555-2000,family,2026-07-03T10:00:00,Sister
+Bob Wilson,bob@example.com,555-3000,work,2026-07-03T10:00:00,Project lead
