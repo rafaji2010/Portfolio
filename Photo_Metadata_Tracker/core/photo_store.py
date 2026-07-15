@@ -7,11 +7,14 @@ from bisect import insort
 from core.models import Photo
 from core.trie import Trie
 
+
 class PhotoStore:
     def __init__(self) -> None:
         self.photos: list[Photo] = []
-        self.tag_index: dict[str, list[int]] = {} # tag -> list of indices in photos
-        self.date_index: list[tuple[datetime, int]] = [] # sorted by date, stores (date, idx)
+        self.tag_index: dict[str, list[int]] = {}  # tag -> list of indices in photos
+        self.date_index: list[tuple[datetime, int]] = (
+            []
+        )  # sorted by date, stores (date, idx)
         self.filename_trie: Trie = Trie()
 
     def add_photo(self, photo: Photo) -> int:

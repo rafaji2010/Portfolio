@@ -1,9 +1,11 @@
 from __future__ import annotations
 
+
 class TrieNode:
     def __init__(self) -> None:
         self.children: dict[str, TrieNode] = {}
         self.is_end: bool = False
+
 
 class Trie:
     def __init__(self) -> None:

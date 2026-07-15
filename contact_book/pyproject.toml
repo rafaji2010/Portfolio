@@ -1,7 +1,11 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
 [project]
-name = "contact-book-v2"
+name = "contact-book"
 version = "0.1.0"
-description = "Contact Book with multiple indexes (BST, Trie, Hash Map, Heap)"
+description = "Interactive CLI Contact Book"
 readme = "README.md"
 requires-python = ">=3.12"
 authors = [
@@ -11,9 +15,6 @@ dependencies = [
     "pydantic[email]>=2.0.0",
 ]
 
-[project.scripts]
-contact-book-v2 = "app.contact_book:main"
-
 [project.optional-dependencies]
 dev = [
     "pytest>=7.0.0",
@@ -21,11 +22,10 @@ dev = [
     "black>=23.0.0",
 ]
 
-[build-system]
-requires = ["setuptools>=61.0"]
-build-backend = "setuptools.build_meta"
+[project.scripts]
+contact-book = "app.cli:main"
 
-[tool.setuptools]
+[tool.hatch.build.targets.wheel]
 packages = ["core", "app"]
 
 [tool.mypy]

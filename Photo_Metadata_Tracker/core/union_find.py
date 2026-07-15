@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+
 class UnionFind:
     def __init__(self) -> None:
         self.parent: dict[str, str] = {}
@@ -12,7 +13,7 @@ class UnionFind:
 
     def find(self, x: str) -> str:
         self._ensure(x)
-        if self.parent[x]!= x:
+        if self.parent[x] != x:
             self.parent[x] = self.find(self.parent[x])
         return self.parent[x]
 

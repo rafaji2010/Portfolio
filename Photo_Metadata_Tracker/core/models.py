@@ -4,7 +4,16 @@ from datetime import datetime, date
 from pathlib import Path
 from pydantic import BaseModel, field_validator
 
-ALLOWED_EXTENSIONS: set[str] = {".jpg", ".jpeg", ".png", ".webp", ".raw", ".heic", ".tiff"}
+ALLOWED_EXTENSIONS: set[str] = {
+    ".jpg",
+    ".jpeg",
+    ".png",
+    ".webp",
+    ".raw",
+    ".heic",
+    ".tiff",
+}
+
 
 class Photo(BaseModel):
     filename: str
@@ -18,7 +27,9 @@ class Photo(BaseModel):
     def validate_extension(cls, v: str) -> str:
         ext = Path(v).suffix.lower()
         if ext not in ALLOWED_EXTENSIONS:
-            raise ValueError(f"filename must end with one of {sorted(ALLOWED_EXTENSIONS)}, got {ext}")
+            raise ValueError(
+                f"filename must end with one of {sorted(ALLOWED_EXTENSIONS)}, got {ext}"
+            )
         return v
 
     @field_validator("size_kb")
@@ -31,7 +42,8 @@ class Photo(BaseModel):
     @field_validator("date_taken")
     @classmethod
     def validate_date(cls, v: datetime) -> datetime:
-        if v.date() > date.today():
+        now = datetime.now(v.tzinfo) if v.tzinfo else datetime.now()
+        if v.date() > now.date():
             raise ValueError("date_taken cannot be in the future")
         return v
 

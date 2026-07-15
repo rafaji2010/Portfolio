@@ -5,10 +5,23 @@ from pathlib import Path
 from core.models import Photo
 from core.photo_store import PhotoStore
 
+
 def demo() -> None:
     store = PhotoStore()
-    p1 = Photo(filename="IMG_001.jpg", size_kb=3200.5, date_taken=datetime(2026,5,1,18,30), tags=["beach","sunset"], resolution_mp=24.0)
-    p2 = Photo(filename="IMG_002.png", size_kb=1800.0, date_taken=datetime(2026,5,3,9,15), tags=["beach","portrait"], resolution_mp=12.0)
+    p1 = Photo(
+        filename="IMG_001.jpg",
+        size_kb=3200.5,
+        date_taken=datetime(2026, 5, 1, 18, 30),
+        tags=["beach", "sunset"],
+        resolution_mp=24.0,
+    )
+    p2 = Photo(
+        filename="IMG_002.png",
+        size_kb=1800.0,
+        date_taken=datetime(2026, 5, 3, 9, 15),
+        tags=["beach", "portrait"],
+        resolution_mp=12.0,
+    )
     store.add_photo(p1)
     store.add_photo(p2)
 
@@ -18,5 +31,10 @@ def demo() -> None:
 
     store.save(Path("photos.json"))
 
-if __name__ == "__main__":
+
+def main() -> None:
     demo()
+
+
+if __name__ == "__main__":
+    main()

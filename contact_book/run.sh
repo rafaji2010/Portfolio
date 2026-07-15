@@ -1,4 +1,7 @@
 #!/bin/bash
-cd ~/Documents/my-coding-journey/mini\ projects/contact_book
-source .venv/bin/activate
-python3 app/cli.py
+# Get directory of this script
+DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )"
+cd "$DIR"
+
+# Run the CLI using uv run to handle dependencies
+uv run python app/cli.py

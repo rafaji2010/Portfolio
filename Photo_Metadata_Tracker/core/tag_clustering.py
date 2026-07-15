@@ -2,6 +2,7 @@ from __future__ import annotations
 from core.models import Photo
 from core.union_find import UnionFind
 
+
 def cluster_tags(photos: list[Photo]) -> dict[str, list[str]]:
     uf = UnionFind()
     for p in photos:
